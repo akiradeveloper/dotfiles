@@ -1,0 +1,10 @@
+*env.vim
+*files.list
+*tags
+.vim/bundle
+.vim/vundle
+.xmonad
+*.o
+*.swp
+
+!.xmonad/xmonad.hs
