@@ -14,7 +14,7 @@ HISTFILE=~/.zsh_history
 
 # Use modern completion system
 autoload -Uz compinit
-compinit
+compinit -d $HOME/.zcompdump_${HOST}
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -51,6 +51,7 @@ fi
 # aliases
 alias vi='vim'
 alias irb='rlwrap irb'
+alias ls='ls --color'
 
 if (test -e $HOME/.zshrc.local); then
   source $HOME/.zshrc.local

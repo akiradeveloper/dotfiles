@@ -1,4 +1,4 @@
-DOT_OBJS=['.vimrc', '.vim', '.zsh/.zshrc', '.tmux.conf']
+DOT_OBJS=['.vimrc', '.vim', '.zsh/.zshenv', '.tmux.conf']
 
 desc "install"
 task 'install' => ['symlink']

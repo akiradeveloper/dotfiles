@@ -3,6 +3,7 @@
 *tags
 .vim/bundle
 .vim/vundle
+.zsh/.zcompdump
 .xmonad
 *.o
 *.swp
