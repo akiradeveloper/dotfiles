@@ -20,8 +20,7 @@ zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
-zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
+zstyle ':completion:*' menu select=2 eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -52,3 +51,22 @@ fi
 # aliases
 alias vi='vim'
 alias irb='rlwrap irb'
+
+if (test -e $HOME/.zshrc.local); then
+  source $HOME/.zshrc.local
+fi
+
+mnt_home()
+{
+  if ! (test -e $HOME/nbr/$1); then
+    mkdir -p $HOME/nbr/$1
+  fi
+  echo mounting \(neighbor\)$1
+  # sshfs -o reconnect -o SSHOPT="ConnectTimeout 1" $1:/home/akira $HOME/nbr/$1
+  sshfs -o reconnect $1:/home/akira $HOME/nbr/$1
+  return 
+}
+
+for name in $NEIGHBORS; do
+  mnt_home $name
+done

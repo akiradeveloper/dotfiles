@@ -1,1 +1,2 @@
-xmonad
+# gnome-terminal &
+# xmonad

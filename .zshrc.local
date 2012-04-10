@@ -1,0 +1,7 @@
+export BEHIND_PROXY=0 # If don't have a proxy remain 0, otherwise turn on and setup the following PROXY_* terms.
+export PROXY_IP=
+export PROXY_PORT=
+export PROXY_ID=
+export PROXY_PASSWD=
+
+export NEIGHBORS= # Example: akira-debugee akira-server
