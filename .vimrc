@@ -6,8 +6,8 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
-NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'L9'
 NeoBundle 'ujihisa/vital.vim'
 
@@ -15,9 +15,13 @@ NeoBundle 'Shougo/neocomplcache'
 let g:neocomplcache_enable_at_startup = 1
 
 NeoBundle 'Shougo/vimfiler'
-autocmd vimenter * VimFiler -simple -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
-"let g:vimfiler_as_default_explorer = 1
-
+" open VimFiler instead of netrw which launches by typing :e . .
+let g:vimfiler_as_default_explorer = 1
+nnoremap <Space>f :call <SID>toggle_vimfiler()<Cr>
+function! s:toggle_vimfiler()
+  VimFiler -simple -buffer-name=explorer -split -winwidth=35 -toggle -no-quit<Cr>
+endfunction 
+"autocmd vimenter * VimFiler -simple -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
 "nnoremap <C-o> :VimFiler -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
 "autocmd! FileType vimfiler call g:my_vimfiler_settings()
 "function! g:my_vimfiler_settings()
@@ -43,7 +47,7 @@ autocmd vimenter * VimFiler -simple -buffer-name=explorer -split -winwidth=45 -t
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'FuzzyFinder'
+"NeoBundle 'FuzzyFinder'
 
 "NeoBundle 'QuickBuf'
 "NeoBundle 'scrooloose/nerdtree'
