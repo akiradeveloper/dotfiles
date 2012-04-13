@@ -21,7 +21,7 @@ nnoremap <Space>f :call <SID>toggle_vimfiler()<Cr>
 function! s:toggle_vimfiler()
   VimFiler -simple -buffer-name=explorer -split -winwidth=35 -toggle -no-quit<Cr>
 endfunction 
-"autocmd vimenter * VimFiler -simple -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
+autocmd vimenter * call <SID>toggle_vimfiler()
 "nnoremap <C-o> :VimFiler -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
 "autocmd! FileType vimfiler call g:my_vimfiler_settings()
 "function! g:my_vimfiler_settings()
