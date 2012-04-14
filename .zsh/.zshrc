@@ -1,3 +1,9 @@
+if (test -e $HOME/.zshrc.local); then
+  source $HOME/.zshrc.local
+else
+  echo ".zshrc.local does not exist!"
+fi
+
 # Set up the prompt
 
 autoload -Uz promptinit
@@ -34,8 +40,6 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 export PATH=/usr/local/sbin:/usr/sbin:/sbin:$HOME/bin:$HOME/.cabal/bin:$PATH
-export EDITOR=vim
-
 if (test -e $HOME/.cabal); then
   export PATH=$HOME/.cabal/bin:$PATH
 fi
@@ -48,19 +52,48 @@ if (test -e $HOME/perl5/perlbrew); then
   source $HOME/perl5/perlbrew/etc/bashrc
 fi
 
+if (test $REQUIRE_AUTH -eq 1); then
+  if (test $BEHIND_PROXY -ne 1); then
+    echo "BEHIND_PROXY does not set to 1 while REQURE_AUTH is set !"
+    echo "Forcely set BEHIND_PROXY"
+    export BEHIND_PROXY=1
+  fi
+fi
+
+if (test $REQUIRE_AUTH -eq 1); then
+  export http_proxy=http://$PROXY_ID:$PROXY_PASSWD@$PROXY_IP:$PROXY_PORT/
+  export HTTP_PROXY=$http_proxy
+  export https_proxy=https://$PROXY_ID:$PROXY_PASSWD@$PROXY_IP:$PROXY_PORT/
+  export HTTPS_PROXY=$https_proxy
+fi
+
+if (test $REQUIRE_AUTH -ne 1); then
+  export http_proxy=http://$PROXY_IP:$PROXY_PORT/
+  export HTTP_PROXY=$http_proxy
+  export https_proxy=https://$PROXY_IP:$PROXY_PORT/
+  export HTTPS_PROXY=$https_proxy
+fi
+
+if (test $BEHIND_PROXY -ne 1); then
+  unset http_proxy
+  unset HTTP_PROXY
+  unset https_proxy
+  unset HTTPS_PROXY
+  unset GIT_PROXY_COMMAND
+fi
+
+export EDITOR=vim
+export PAGER=less
+
 # aliases
 alias vi='vim'
 alias irb='rlwrap irb'
 alias ls='ls --color'
 
-if (test -e $HOME/.zshrc.local); then
-  source $HOME/.zshrc.local
-fi
-
 mnt_home()
 {
-  if ! (test -e $HOME/nbr/$1); then
-    mkdir -p $HOME/nbr/$1
+  if ! (test -e $HOME/neighbors/$1); then
+    mkdir -p $HOME/neighbors/$1
   fi
   echo mounting \(neighbor\)$1
   # sshfs -o reconnect -o SSHOPT="ConnectTimeout 1" $1:/home/akira $HOME/nbr/$1

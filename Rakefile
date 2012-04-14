@@ -1,12 +1,27 @@
-DOT_OBJS=['.vimrc', '.vim', '.zsh/.zshenv', '.tmux.conf']
+DOT_FILES = ['.vimrc', '.vim', '.zsh/.zshenv']
 
 desc "install"
 task 'install' => ['symlink']
 
 task 'symlink' do
-  DOT_OBJS.each do |f|
+  DOT_FILES.each do |f|
     cd "#{ENV['HOME']}" do 
       `ln -s dotfiles/#{f} .`
     end
   end
 end
+
+ERB_FILES = {
+  ".wgetrc" => "~/",
+  ".xsession" => "~/",
+  ".gitconfig" => "~/",
+  ".tmux.conf" => "~/",
+  ".curlrc" => "~/",
+  ".screenrc" => "~/"
+}
+
+SYS_FILES = {
+  "system/apt.conf" => "/etc/apt/"
+}
+    
+

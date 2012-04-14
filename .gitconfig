@@ -3,3 +3,8 @@
 	name = Akira Hayakawa
 [github]
 	user = akiradeveloper
+
+<% if ENV['BEHIND_PROXY'] == '1' %>
+[http]
+	proxy = %http_proxy%
+<% end %>
