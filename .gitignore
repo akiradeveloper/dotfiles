@@ -7,5 +7,6 @@
 .xmonad
 *.o
 *.swp
+tmp
 
 !.xmonad/xmonad.hs
