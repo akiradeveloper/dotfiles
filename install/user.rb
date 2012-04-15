@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + "/common"
+require File.expand_path(File.dirname(__FILE__)) + "/common"
 
 [".vimrc", ".vim", ".zsh/.zshenv"].each do |f|
   system "ln -s dotfiles/#{f} $HOME"   

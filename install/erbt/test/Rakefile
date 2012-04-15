@@ -1,0 +1,46 @@
+require File.dirname(__FILE__) + "/" + "../erbt"
+
+include ERB::Template
+
+FAKE_LOGGER = Logger.new("Fake")
+
+task :clean do
+  `rm -rf dest`
+  `mkdir dest`
+end
+
+task :t1 => [:clean] do
+  logger = Logger.new("Cp")
+  Cp.process('src', 'src', logger)
+  Cp.process('dest', 'src', logger)
+  logger.show
+end
+
+task :t2 => [:clean] do
+  logger = Logger.new("Cp")
+  Cp.process('src', 'dest', logger)
+  logger.show
+  Cp.process('src', 'dest', logger)
+  logger.show
+end
+
+task :t3 => [:clean] do 
+  logger = Logger.new("Update")
+  Update.process('dest/null', logger)
+  logger.show
+end
+
+task :t4 => [:clean] do
+  Cp.process('src', 'dest', FAKE_LOGGER)
+  sh "tree -a"
+  logger = Logger.new("Update")
+  Update.process('dest/src', logger)
+  logger.show
+  sh "cat dest/src"
+  Update.process('dest/src', logger)
+  logger.show
+  sh "tree -a"
+end
+
+task :test => [:t1, :t2, :t3, :t4]
+

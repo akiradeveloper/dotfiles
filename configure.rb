@@ -1,12 +1,12 @@
 USER_COPIES = { 
-  ".zshrc.local" => "~/",
-  ".wgetrc" => "~/",
-  ".curlrc" => "~/",
-  ".xsession" => "~/",
-  ".gitconfig" => "~/",
-  ".screenrc" => "~/",
-  ".tmux.conf" => "~/",
-  ".ssh/config" => "~/.ssh"
+  ".zshrc.local" => ENV["HOME"],
+  ".wgetrc" => ENV["HOME"],
+  ".curlrc" => ENV["HOME"],
+  ".xsession" => ENV["HOME"],
+  ".gitconfig" => ENV["HOME"],
+  ".screenrc" => ENV["HOME"],
+  ".tmux.conf" => ENV["HOME"],
+  ".ssh/config" => "#{ENV["HOME"]}/.ssh"
 }
 
 SYSTEM_COPIES = {

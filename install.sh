@@ -1,5 +1,4 @@
 #!/bin/sh
 
-cd install
-ruby user.rb
-sudo ruby system.rb
+ruby install/user.rb
+sudo ruby install/system.rb
