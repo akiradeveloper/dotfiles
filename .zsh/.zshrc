@@ -40,6 +40,8 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 export PATH=/usr/local/sbin:/usr/sbin:/sbin:$HOME/bin:$HOME/.cabal/bin:$PATH
+export PATH=$HOME/dotfiles/bin:$PATH
+
 if (test -e $HOME/.cabal); then
   export PATH=$HOME/.cabal/bin:$PATH
 fi
