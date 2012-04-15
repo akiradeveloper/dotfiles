@@ -1,10 +1,11 @@
 USER_COPIES = { 
+  ".zshrc.local" => "~/",
   ".wgetrc" => "~/",
+  ".curlrc" => "~/",
   ".xsession" => "~/",
   ".gitconfig" => "~/",
-  ".tmux.conf" => "~/",
-  ".curlrc" => "~/",
   ".screenrc" => "~/",
+  ".tmux.conf" => "~/",
   ".ssh/config" => "~/.ssh"
 }
 

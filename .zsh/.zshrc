@@ -90,14 +90,14 @@ alias vi='vim'
 alias irb='rlwrap irb'
 alias ls='ls --color'
 
+NBR_DIR=$HOME/nbr
 mnt_home()
 {
-  if ! (test -e $HOME/neighbors/$1); then
-    mkdir -p $HOME/neighbors/$1
+  if ! (test -e $NBR_DIR/$1); then
+    mkdir -p $NBR_DIR/$1
   fi
-  echo mounting \(neighbor\)$1
-  # sshfs -o reconnect -o SSHOPT="ConnectTimeout 1" $1:/home/akira $HOME/nbr/$1
-  sshfs -o reconnect $1:/home/akira $HOME/nbr/$1
+  echo mounting a neighbor \($1\)
+  sshfs -o reconnect $1:/home/akira $NBR_DIR/$1
   return 
 }
 

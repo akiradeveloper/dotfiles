@@ -1,12 +1,12 @@
 export BEHIND_PROXY=0
-export PROXY_IP=
-export PROXY_PORT=
+export PROXY_IP= # Example: 192.168.0.1
+export PROXY_PORT= # Example: 8080
 
-export REQUIRE_AUTH=0
-export PROXY_ID=
-export PROXY_PASSWD=
+export REQUIRE_AUTH=0 
+export PROXY_ID= # Example: linux
+export PROXY_PASSWD= #Example: 1991
 
-# Automatically mount your neighbors' home directories onto ~/neighbors
+# Automatically mount your NEIGHBORS' home directories into ~/nbr/ .
 # Example:
-# NEIGHBORS=sakura akira-mgr
-export NEIGHBORS=
+# NEIGHBORS=(sakura akira-mgr)
+export NEIGHBORS=()
