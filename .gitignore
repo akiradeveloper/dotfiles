@@ -1,7 +1,7 @@
 *env.vim
 *files.list
 *tags
-.vim/bundle
+.vim/bundle/*
 .vim/vundle
 .zsh/.zcompdump
 .xmonad
@@ -10,3 +10,4 @@
 tmp
 
 !.xmonad/xmonad.hs
+!.vim/bundle/neobundle.vim

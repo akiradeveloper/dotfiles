@@ -11,3 +11,15 @@ def process(map)
   cp_logger.show
   update_logger.show
 end
+
+def purge(map)
+  puts "purging ..."
+  map.each do |src, dest|
+    file = dest + "/" + File.basename(src)
+    tf = ERB::Template.tf(file)
+    system "rm #{file}"
+    system "rm #{tf}"
+    p file
+    p tf
+  end
+end

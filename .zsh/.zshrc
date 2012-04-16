@@ -76,6 +76,13 @@ if (test $REQUIRE_AUTH -ne 1); then
   export HTTPS_PROXY=$https_proxy
 fi
 
+# GIT_PROXY_COMMAND is too powerful.
+# it overwrites core.gitProxy in ~/.gitconfig 
+unset GIT_PROXY_COMMAND
+if (test 0 -eq 1); then
+  GIT_PROXY_COMMAND=git-proxy
+fi
+
 if (test $BEHIND_PROXY -ne 1); then
   unset http_proxy
   unset HTTP_PROXY

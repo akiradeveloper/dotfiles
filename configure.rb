@@ -1,8 +1,6 @@
 USER_COPIES = { 
-  ".zshrc.local" => ENV["HOME"],
   ".wgetrc" => ENV["HOME"],
   ".curlrc" => ENV["HOME"],
-  ".xsession" => ENV["HOME"],
   ".gitconfig" => ENV["HOME"],
   ".screenrc" => ENV["HOME"],
   ".tmux.conf" => ENV["HOME"],
