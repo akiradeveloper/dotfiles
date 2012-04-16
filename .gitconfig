@@ -3,7 +3,6 @@
 	name = Akira Hayakawa
 [github]
 	user = akiradeveloper
-
 <% if ENV['BEHIND_PROXY'] == '1' %>
 [core]
 	gitProxy = git-proxy for github.com

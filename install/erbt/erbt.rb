@@ -87,7 +87,8 @@ module ERB::Template
         logger.log(f, ERB::Template::Logger::FAILURE, msg)
         return 
       end
-      content = `erb #{tf}`
+      # Trim mode 2
+      content = `erb -T 2 #{tf}`
       if !force and File.exist?(f) 
         msg = "the file already exists. never update."
         logger.log(f, ERB::Template::Logger::FAILURE, msg)
