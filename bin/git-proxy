@@ -1,4 +1,4 @@
 #!/bin/sh
 
-CORKSCREW=`whick corkscrew`
+CORKSCREW=`which corkscrew`
 $CORKSCREW $PROXY_IP $PROXY_PORT $1 $2

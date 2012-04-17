@@ -98,6 +98,7 @@ export PAGER=less
 alias vi='vim'
 alias irb='rlwrap irb'
 alias ls='ls --color'
+alias cl='clear'
 
 NBR_DIR=$HOME/nbr
 mnt_home()

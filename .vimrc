@@ -6,6 +6,7 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
+NeoBundle 'thinca/vim-localrc'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'L9'
@@ -15,6 +16,7 @@ NeoBundle 'Shougo/vimfiler'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-markdown'
 
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
@@ -60,6 +62,12 @@ autocmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') | q | endif
 "NeoBundle 'gmarik/vundle'
 "set runtimepath+=~/.vim/bundle/vundle/
 "call vundle#rc()
+
+let g:quickrun_config = {}
+let g:quickrun_config['markdown'] = {
+\ 'command' : 'bluecloth',
+\ 'exec' : '%c -f %s'
+\ }
 
 syntax on
 set autoindent
