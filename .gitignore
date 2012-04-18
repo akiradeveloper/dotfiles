@@ -8,6 +8,8 @@
 *.o
 *.swp
 tmp
+bin/git-proxy
+bin/.erbt
 
 !.xmonad/xmonad.hs
 !.vim/bundle/neobundle.vim
