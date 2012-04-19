@@ -51,7 +51,7 @@ module ERB::Template
       __show(failure)
     end
   end
-    
+
   class Cp
     def self.process(src, dest, logger, force=false)
       unless File.file?(src)
@@ -72,7 +72,11 @@ module ERB::Template
         logger.log(src, ERB::Template::Logger::FAILURE, msg) 
         return
       end
-      # TODO if the content is the same, do not copy.
+      if File.exist?(tf) and File.read(tf) == File.read(src)
+        msg = "the template file for #{src} does not need to be updated because its contents is up-to-date."
+        logger.log(src, ERB::Template::Logger::FAILURE, msg)
+        return
+      end
       system "cp #{src} #{tf}"
       logger.log(src, ERB::Template::Logger::SUCCESS, "")
       return 
@@ -90,12 +94,12 @@ module ERB::Template
       # Trim mode 2
       content = `erb -T 2 #{tf}`
       if !force and File.exist?(f) 
-        msg = "the file already exists. never update."
+        msg = "the file already exists."
         logger.log(f, ERB::Template::Logger::FAILURE, msg)
         return 
       end
       if File.exist?(f) and content == File.read(f)
-        msg = "the file does not need to be updated."
+        msg = "the file does not need to be updated because its contents is up-to-date."
         logger.log(f, ERB::Template::Logger::FAILURE, msg)
         return 
       end
