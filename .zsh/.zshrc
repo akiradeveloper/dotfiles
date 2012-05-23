@@ -1,11 +1,10 @@
-if (test -e $HOME/.zshrc.local); then
-  source $HOME/.zshrc.local
+if (test -e $HOME/.rc.conf); then
+  source $HOME/.rc.conf
 else
-  echo ".zshrc.local does not exist!"
+  echo "~/.rc.conf does not exist!"
 fi
 
 # Set up the prompt
-
 autoload -Uz promptinit
 promptinit
 prompt walters
@@ -39,19 +38,8 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-export PATH=/usr/local/sbin:/usr/sbin:/sbin:$HOME/bin:$HOME/.cabal/bin:$PATH
-
-if (test -e $HOME/.cabal); then
-  export PATH=$HOME/.cabal/bin:$PATH
-fi
-
-if (test -e $HOME/.rvm); then
-  [[ -s "$HOME/.rvm/scripts/rvm" ]] & . "$HOME/.rvm/scripts/rvm" 
-fi
-
-if (test -e $HOME/perl5/perlbrew); then
-  source $HOME/perl5/perlbrew/etc/bashrc
-fi
+# Basic PATH
+export PATH=/usr/local/sbin:/usr/sbin:/sbin:$HOME/bin:$PATH
 
 if (test $REQUIRE_AUTH -eq 1); then
   if (test $BEHIND_PROXY -ne 1); then
@@ -63,15 +51,15 @@ fi
 
 if (test $REQUIRE_AUTH -eq 1); then
   export http_proxy=http://$PROXY_ID:$PROXY_PASSWD@$PROXY_IP:$PROXY_PORT/
-  export HTTP_PROXY=$http_proxy
   export https_proxy=https://$PROXY_ID:$PROXY_PASSWD@$PROXY_IP:$PROXY_PORT/
+  export HTTP_PROXY=$http_proxy
   export HTTPS_PROXY=$https_proxy
 fi
 
 if (test $REQUIRE_AUTH -ne 1); then
   export http_proxy=http://$PROXY_IP:$PROXY_PORT/
-  export HTTP_PROXY=$http_proxy
   export https_proxy=https://$PROXY_IP:$PROXY_PORT/
+  export HTTP_PROXY=$http_proxy
   export HTTPS_PROXY=$https_proxy
 fi
 
@@ -84,8 +72,8 @@ fi
 
 if (test $BEHIND_PROXY -ne 1); then
   unset http_proxy
-  unset HTTP_PROXY
   unset https_proxy
+  unset HTTP_PROXY
   unset HTTPS_PROXY
   unset GIT_PROXY_COMMAND
 fi
@@ -113,3 +101,9 @@ mnt_home()
 for name in $NEIGHBORS; do
   mnt_home $name
 done
+
+if (test -e $HOME/.rc.local); then
+  source $HOME/.rc.local
+else
+  echo "~/.rc.local does not exist!"
+fi
