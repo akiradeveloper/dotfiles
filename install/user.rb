@@ -6,4 +6,4 @@ end
 
 process(USER_COPIES)
 
-system "chmod +x $HOME/bin/git-proxy"
+system "chmod +x $HOME/local/bin/git-proxy"

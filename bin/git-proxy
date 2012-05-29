@@ -1,0 +1,10 @@
+#!/bin/sh
+<% if ENV['BEHIND_PROXY'] == '1' %>
+CORKSCREW=`which corkscrew`
+<% if ENV['REQUIRE_AUTH'] == '1' %>
+$CORKSCREW $PROXY_IP $PROXY_PORT $1 $2 $HOME/.ssh/.authorize
+<% else %>
+$CORKSCREW $PROXY_IP $PROXY_PORT $1 $2 
+<% end %>
+<% end %>
+

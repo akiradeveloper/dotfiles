@@ -10,4 +10,4 @@ if (test -e $HOME/perl5/perlbrew); then
   source $HOME/perl5/perlbrew/etc/bashrc
 fi
 
-export SCALA_HOME=
+export SCALA_HOME=$HOME/local/scala

@@ -38,8 +38,8 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# Basic PATH
-export PATH=/usr/local/sbin:/usr/sbin:/sbin:$HOME/bin:$PATH
+export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
+export PATH=/usr/local/bin:$PATH
 
 if (test $REQUIRE_AUTH -eq 1); then
   if (test $BEHIND_PROXY -ne 1); then
@@ -87,18 +87,18 @@ alias irb='rlwrap irb'
 alias ls='ls --color'
 alias cl='clear'
 
-NBR_DIR=$HOME/nbr
+REMOTE_DIR=$HOME/remote
 mnt_home()
 {
-  if ! (test -e $NBR_DIR/$1); then
-    mkdir -p $NBR_DIR/$1
+  if ! (test -e $REMOTE_DIR/$1); then
+    mkdir -p $REMOTE_DIR/$1
   fi
-  echo mounting a neighbor \($1\)
-  sshfs -o reconnect $1:/home/akira $NBR_DIR/$1
+  echo mounting a remote directory \($1\)
+  sshfs -o allow_root -o reconnect $1:/home/akira $REMOTE_DIR/$1
   return 
 }
 
-for name in $NEIGHBORS; do
+for name in $REMOTES; do
   mnt_home $name
 done
 
@@ -107,3 +107,6 @@ if (test -e $HOME/.rc.local); then
 else
   echo "~/.rc.local does not exist!"
 fi
+
+# $HOME/local/bin should precede others.
+export PATH=$HOME/local/bin:$PATH

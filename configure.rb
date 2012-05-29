@@ -16,7 +16,7 @@ USER_COPIES = {
   ".tmux.conf" => ENV["HOME"],
   ".ssh/config" => "#{ENV["HOME"]}/.ssh",
   ".ssh/.authorize" => "#{ENV["HOME"]}/.ssh",
-  "bin/git-proxy" => "#{ENV["HOME"]}/bin"
+  "bin/git-proxy" => "#{ENV["HOME"]}/local/bin"
 }
 
 SYSTEM_COPIES = {
