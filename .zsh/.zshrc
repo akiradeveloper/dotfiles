@@ -1,8 +1,6 @@
-if (test -e $HOME/.rc.conf); then
-  source $HOME/.rc.conf
-else
-  echo "~/.rc.conf does not exist!"
-fi
+echo "read .zshrc"
+
+source .rc.generic
 
 # Set up the prompt
 autoload -Uz promptinit
@@ -37,76 +35,3 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-
-export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
-export PATH=/usr/local/bin:$PATH
-
-if (test $REQUIRE_AUTH -eq 1); then
-  if (test $BEHIND_PROXY -ne 1); then
-    echo "BEHIND_PROXY does not set to 1 while REQURE_AUTH is set !"
-    echo "Forcely set BEHIND_PROXY"
-    export BEHIND_PROXY=1
-  fi
-fi
-
-if (test $REQUIRE_AUTH -eq 1); then
-  export http_proxy=http://$PROXY_ID:$PROXY_PASSWD@$PROXY_IP:$PROXY_PORT/
-  export https_proxy=https://$PROXY_ID:$PROXY_PASSWD@$PROXY_IP:$PROXY_PORT/
-  export HTTP_PROXY=$http_proxy
-  export HTTPS_PROXY=$https_proxy
-fi
-
-if (test $REQUIRE_AUTH -ne 1); then
-  export http_proxy=http://$PROXY_IP:$PROXY_PORT/
-  export https_proxy=https://$PROXY_IP:$PROXY_PORT/
-  export HTTP_PROXY=$http_proxy
-  export HTTPS_PROXY=$https_proxy
-fi
-
-# GIT_PROXY_COMMAND is too powerful.
-# it overwrites core.gitProxy in ~/.gitconfig 
-unset GIT_PROXY_COMMAND
-if (test 0 -eq 1); then
-  GIT_PROXY_COMMAND=git-proxy
-fi
-
-if (test $BEHIND_PROXY -ne 1); then
-  unset http_proxy
-  unset https_proxy
-  unset HTTP_PROXY
-  unset HTTPS_PROXY
-  unset GIT_PROXY_COMMAND
-fi
-
-export EDITOR=vim
-export PAGER=less
-
-# aliases
-alias vi='vim'
-alias irb='rlwrap irb'
-alias ls='ls --color'
-alias cl='clear'
-
-REMOTE_DIR=$HOME/remote
-mnt_home()
-{
-  if ! (test -e $REMOTE_DIR/$1); then
-    mkdir -p $REMOTE_DIR/$1
-  fi
-  echo mounting a remote directory \($1\)
-  sshfs -o allow_root -o reconnect $1:/home/akira $REMOTE_DIR/$1
-  return 
-}
-
-for name in $REMOTES; do
-  mnt_home $name
-done
-
-if (test -e $HOME/.rc.local); then
-  source $HOME/.rc.local
-else
-  echo "~/.rc.local does not exist!"
-fi
-
-# $HOME/local/bin should precede others.
-export PATH=$HOME/local/bin:$PATH

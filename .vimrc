@@ -6,17 +6,17 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
-NeoBundle 'thinca/vim-localrc'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'L9'
-NeoBundle 'ujihisa/vital.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/vimfiler'
-NeoBundle 'thinca/vim-ref'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-markdown'
+NeoBundle 'http://github.com/thinca/vim-localrc'
+NeoBundle 'http://github.com/Shougo/unite.vim'
+NeoBundle 'http://github.com/Shougo/neobundle.vim'
+NeoBundle 'http://github.com/vim-scripts/L9'
+NeoBundle 'http://github.com/vim-jp/vital.vim'
+NeoBundle 'http://github.com/Shougo/neocomplcache'
+NeoBundle 'http://github.com/Shougo/vimfiler'
+NeoBundle 'http://github.com/thinca/vim-ref'
+NeoBundle 'http://github.com/thinca/vim-quickrun'
+NeoBundle 'http://github.com/tpope/vim-fugitive'
+NeoBundle 'http://github.com/tpope/vim-markdown'
 
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1

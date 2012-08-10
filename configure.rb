@@ -1,24 +1,18 @@
-# set FORCE true will delete the existing files, not otherwise.
-FORCE=false
+require File.expand_path("lib/dotfiles/util", File.dirname(__FILE__)) 
 
-USER_LINKS = {
-  ".vim" => ENV["HOME"],
-  ".vimrc" => ENV["HOME"],
-  ".zsh" => ENV["HOME"],
-  ".zsh/.zshenv" => ENV["HOME"]
+home = ENV["HOME"]
+
+user_build_map = Files.mk_rel_map("user/build", home) 
+root_build_map = Files.mk_rel_map("root/build", "/")
+
+user_default_map = {
+  ".vim" => File.join(home, ".vim"),
+  ".vimrc" => File.join(home, ".vimrc"),
+  ".zsh" => File.join(home, ".zsh"),
+  ".zsh/.zshenv" => File.join(home, ".zshenv"),
 }
 
-USER_COPIES = { 
-  ".wgetrc" => ENV["HOME"],
-  ".curlrc" => ENV["HOME"],
-  ".gitconfig" => ENV["HOME"],
-  ".screenrc" => ENV["HOME"],
-  ".tmux.conf" => ENV["HOME"],
-  ".ssh/config" => "#{ENV["HOME"]}/.ssh",
-  ".ssh/.authorize" => "#{ENV["HOME"]}/.ssh",
-  "bin/git-proxy" => "#{ENV["HOME"]}/local/bin"
-}
-
-SYSTEM_COPIES = {
-  "system/apt.conf" => "/etc/apt"
-}
+DOTFILES_LN = user_default_map.merge user_build_map
+DOTFILES_CP = {}
+DOTFILES_ROOT_LN = root_build_map
+DOTFILES_ROOT_CP = {}

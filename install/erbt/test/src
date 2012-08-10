@@ -1,2 +1,0 @@
-<% name = "akira" %>
-You are <%=name%>developer!
