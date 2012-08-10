@@ -1,0 +1,16 @@
+#!/bin/sh
+
+echo read .rc.generic
+
+# aliases
+alias vi='vim'
+alias irb='rlwrap irb'
+alias ls='ls --color'
+alias cl='clear'
+
+if [ -e $HOME/.rc.local ]
+then
+  . $HOME/.rc.local
+else
+  echo "~/.rc.local does not exist!"
+fi
