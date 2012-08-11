@@ -2,6 +2,7 @@ require File.expand_path("dotfiles/util", File.dirname(__FILE__))
 require File.expand_path("dotfiles/dotfiles", File.dirname(__FILE__))
 
 module Dotfiles
+
   def self.compile(from, to)
     $stderr.puts "Dotfiles.compile #{from} #{to}"
     Dotfiles::Compile.process(from, to)

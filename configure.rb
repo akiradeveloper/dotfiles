@@ -5,7 +5,7 @@ home = ENV["HOME"]
 user_build_map = Files.mk_rel_map("user/build", home) 
 user_prebuild_map = Files.mk_rel_map("user/pre-build", home)
 root_build_map = Files.mk_rel_map("root/build", "/")
-root_prebuild_map = Files.mk_rel_map("root/pre-build", home)
+root_prebuild_map = Files.mk_rel_map("root/pre-build", "/")
 
 user_default_map = {
   ".vim" => File.join(home, ".vim"),

@@ -17,12 +17,11 @@ add_binpath_foreach(){
     return
   fi
 
-  for dir in `ls $root_dir`
+  for dir in `ls -A $root_dir`
   do
     add_binpath_of $root_dir/$dir
   done
 }
 
-add_binpath_foreach $HOME/local
 add_binpath_foreach $HOME
 add_binpath_of $HOME
