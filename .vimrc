@@ -6,17 +6,33 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
-NeoBundle 'http://github.com/thinca/vim-localrc'
-NeoBundle 'http://github.com/Shougo/unite.vim'
-NeoBundle 'http://github.com/Shougo/neobundle.vim'
-NeoBundle 'http://github.com/vim-scripts/L9'
-NeoBundle 'http://github.com/vim-jp/vital.vim'
-NeoBundle 'http://github.com/Shougo/neocomplcache'
-NeoBundle 'http://github.com/Shougo/vimfiler'
-NeoBundle 'http://github.com/thinca/vim-ref'
-NeoBundle 'http://github.com/thinca/vim-quickrun'
-NeoBundle 'http://github.com/tpope/vim-fugitive'
-NeoBundle 'http://github.com/tpope/vim-markdown'
+let g:neobundle_default_git_protocol = 'http'
+ 
+NeoBundle 'vim-scripts/L9'
+NeoBundle 'vim-jp/vital.vim'
+
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/vimfiler'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/unite.vim'
+
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'thinca/vim-localrc'
+
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-markdown'
+
+" ### Haskell plugins ###
+" completefunc is set by haskell_doc.vim.  I don't like it. 
+" NeoBundle 'http://github.com/lukerandall/haskellmode-vim'
+NeoBundle 'dag/vim2hs'
+NeoBundle 'eagletmt/ghcmod-vim'
+NeoBundle 'ujihisa/neco-ghc'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'pbrisbin/html-template-syntax'
+" NeoBundle 'kana/vim-textobj-indent' 
 
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
@@ -31,11 +47,12 @@ endfunction
 autocmd VimEnter * call <SID>toggle_vimfiler()
 autocmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') | q | endif
 
-let g:quickrun_config = {}
-let g:quickrun_config['markdown'] = {
-\ 'command' : 'bluecloth',
-\ 'exec' : '%c -f %s'
-\ }
+function g:set_local_indent_level(level)
+  execute "setlocal expandtab"
+  execute "setlocal shiftwidth=" . a:level
+  execute "setlocal tabstop=" . a:level
+  execute "setlocal softtabstop=" . a:level
+endfunction
 
 syntax on
 set autoindent

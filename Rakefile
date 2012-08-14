@@ -33,6 +33,16 @@ namespace :root do
   task :reinstall => [:uninstall, :install]
 end
 
+desc("initialize. run this at the very first.")
+task :init do
+  system("cp -n .dotfiles.conf ~") 
+  system("cp -n .rc.local ~")
+  system("cp -n .profile.local ~")
+  Dir.chdir(".vim/bundle") do
+    system("git clone http://github.com/Shougo/neobundle.vim.git")
+  end
+end
+
 compile_map = Files.mk_rel_map("user/src", "user/build").
   merge Files.mk_rel_map("root/src", "root/build")
 

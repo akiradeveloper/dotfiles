@@ -4,8 +4,6 @@
 [github]
 	user = akiradeveloper
 <% if ENV['BEHIND_PROXY'] == '1' %>
-[core]
-	gitProxy = git-proxy for github.com
 [http]
 <% if ENV['REQUIRE_AUTH'] == '1' %>
 	proxy = http://<%=ENV['PROXY_ID']%>:<%=ENV['PROXY_PASSWD']%>@<%=ENV['PROXY_IP']%>:<%=ENV['PROXY_PORT']%>/
