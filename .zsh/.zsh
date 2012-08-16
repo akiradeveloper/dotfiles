@@ -1,1 +1,0 @@
-/home/akira/dotfiles/.zsh

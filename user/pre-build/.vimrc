@@ -2,8 +2,8 @@ set nocompatible
 filetype plugin indent off
 
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#rc(expand('~/.vim/bundle/'))
+  set runtimepath+=~/.vimbundle/neobundle.vim/
+  call neobundle#rc(expand('~/.vimbundle/'))
 endif
 
 let g:neobundle_default_git_protocol = 'http'

@@ -7,6 +7,7 @@ add_binpath_of(){
   then
     echo "[add] $path_bin"
     PATH=$path_bin:$PATH
+    export PATH
   fi
 }
 

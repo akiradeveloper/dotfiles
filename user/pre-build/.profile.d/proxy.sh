@@ -1,7 +1,5 @@
 #!/bin/sh
 
-
-
 setup_proxy(){
   unset http_proxy
   unset https_proxy
@@ -13,17 +11,22 @@ setup_proxy(){
     return
   fi
 
-  export http_proxy=http://$PROXY_IP:$PROXY_PORT/
-  export https_proxy=https://$PROXY_IP:$PROXY_PORT/
+  http_proxy=http://$PROXY_IP:$PROXY_PORT/
+  https_proxy=https://$PROXY_IP:$PROXY_PORT/
 
   if [ $REQUIRE_AUTH -eq 1 ]
   then
-    export http_proxy=http://$PROXY_ID:$PROXY_PASSWD@$PROXY_IP:$PROXY_PORT/
-    export https_proxy=https://$PROXY_ID:$PROXY_PASSWD@$PROXY_IP:$PROXY_PORT/
+    http_proxy=http://$PROXY_ID:$PROXY_PASSWD@$PROXY_IP:$PROXY_PORT/
+    https_proxy=https://$PROXY_ID:$PROXY_PASSWD@$PROXY_IP:$PROXY_PORT/
   fi
   
-  export HTTP_PROXY=$http_proxy
-  export HTTPS_PROXY=$https_proxy
+  HTTP_PROXY=$http_proxy
+  HTTPS_PROXY=$https_proxy
+
+  export http_proxy
+  export https_proxy
+  export HTTP_PROXY
+  export HTTPS_PROXY
 }
 
 setup_proxy

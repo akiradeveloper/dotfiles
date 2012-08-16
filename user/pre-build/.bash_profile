@@ -1,6 +1,7 @@
 echo read .bash_profile
 
-export SHELL=`which bash`
+SHELL=`which bash`
+export SHELL
 
 source .profile.d/zsh_activation
 source .profile.generic

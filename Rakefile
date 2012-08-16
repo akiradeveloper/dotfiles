@@ -39,7 +39,7 @@ task :init do
   system("cp -n .rc.local ~")
   system("cp -n .profile.local ~")
 
-  Dir.chdir(".vim/bundle") do
+  Dir.chdir(File.join(ENV["HOME"], ".vimbundle")) do
     system("git clone http://github.com/Shougo/neobundle.vim.git")
   end
 end
@@ -78,6 +78,10 @@ end
 
 task :misc do 
   system "chmod +x $HOME/bin/git-proxy"
+
+  Dir.chdir(File.join(ENV["HOME"], ".vimbundle/vimproc")) do
+    system("make -f make_unix.mak")
+  end
 end
 
 desc("install(user)")
