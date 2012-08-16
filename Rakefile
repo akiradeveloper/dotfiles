@@ -38,6 +38,7 @@ task :init do
   system("cp -n .dotfiles.conf ~") 
   system("cp -n .rc.local ~")
   system("cp -n .profile.local ~")
+
   Dir.chdir(".vim/bundle") do
     system("git clone http://github.com/Shougo/neobundle.vim.git")
   end

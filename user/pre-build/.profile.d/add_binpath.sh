@@ -24,4 +24,5 @@ add_binpath_foreach(){
 }
 
 add_binpath_foreach $HOME
+add_binpath_foreach $HOME/local
 add_binpath_of $HOME

@@ -9,6 +9,8 @@ else
   echo "~/.dotfiles.conf does not exist!"
 fi
 
+unset GIT_PROXY_COMMAND
+
 PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
 PATH=/usr/local/bin:$PATH
 EDITOR=vim
@@ -32,6 +34,3 @@ then
 else
   echo "~/.profile.local does not exist!"
 fi
-
-PATH=$HOME/local/bin:$PATH
-export PATH

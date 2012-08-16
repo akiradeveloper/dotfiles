@@ -3,9 +3,8 @@
 echo read .rc.generic
 
 # aliases
-alias vi='vim'
 alias irb='rlwrap irb'
-alias ls='ls --color'
+alias ls='ls --color=auto'
 alias cl='clear'
 
 if [ -e $HOME/.rc.local ]
