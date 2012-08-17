@@ -77,7 +77,10 @@ task :cp do
 end
 
 task :misc do 
-  system "chmod +x $HOME/bin/git-proxy"
+  FileList[File.join(ENV["HOME"], "bin/*")].each do |binfile|
+    next unless Pathname(binfile).file?
+    system("chmod +x #{binfile}")
+  end
 
   Dir.chdir(File.join(ENV["HOME"], ".vimbundle/vimproc")) do
     system("make -f make_unix.mak")

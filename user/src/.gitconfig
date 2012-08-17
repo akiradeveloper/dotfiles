@@ -3,6 +3,9 @@
 	name = Akira Hayakawa
 [github]
 	user = akiradeveloper
+[core]
+	editor = vim
+
 <% if ENV['BEHIND_PROXY'] == '1' %>
 [http]
 <% if ENV['REQUIRE_AUTH'] == '1' %>
