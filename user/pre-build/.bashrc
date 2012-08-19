@@ -2,13 +2,14 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# If not running interactively, don't do anything
+# Note this line must precede other lines otherwise scp fails.
+[ -z "$PS1" ] && return
+
 echo "read .bashrc"
 source ~/.rc.generic
 
 set -o vi
-
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
