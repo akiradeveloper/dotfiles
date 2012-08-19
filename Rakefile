@@ -33,14 +33,16 @@ namespace :root do
   task :reinstall => [:uninstall, :install]
 end
 
-desc("initialize. run this at the very first.")
-task :init do
-  system("cp -n .dotfiles.conf ~") 
-  system("cp -n .rc.local ~")
-  system("cp -n .profile.local ~")
+desc("initialize(run this first!!!)")
+task :initialize do
+  system "cp -n .dotfiles.conf ~"  
+  system "cp -n .rc.local ~" 
+  system "cp -n .profile.local ~" 
 
-  Dir.chdir(File.join(ENV["HOME"], ".vimbundle")) do
-    system("git clone http://github.com/Shougo/neobundle.vim.git")
+  vimbundlepath = File.join(ENV["HOME"], ".vimbundle")
+  system "mkdir -p #{vimbundlepath}"
+  Dir.chdir(vimbundlepath) do
+    system "git clone http://github.com/Shougo/neobundle.vim.git" 
   end
 end
 
@@ -79,11 +81,7 @@ end
 task :misc do 
   FileList[File.join(ENV["HOME"], "bin/*")].each do |binfile|
     next unless Pathname(binfile).file?
-    system("chmod +x #{binfile}")
-  end
-
-  Dir.chdir(File.join(ENV["HOME"], ".vimbundle/vimproc")) do
-    system("make -f make_unix.mak")
+    system "chmod +x #{binfile}" 
   end
 end
 
