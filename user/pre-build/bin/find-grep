@@ -2,4 +2,4 @@
 
 rootpath=$1
 pattern=$2
-find $rootpath | xargs -n 1 --max-procs=0 grep $pattern
+find $rootpath | xargs -n 1 --max-procs=0 grep -nH $pattern

@@ -3,7 +3,7 @@
 # for examples
 
 echo "read .bashrc"
-source .rc.generic
+source ~/.rc.generic
 
 set -o vi
 

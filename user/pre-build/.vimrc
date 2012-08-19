@@ -10,7 +10,7 @@ let g:neobundle_default_git_protocol = 'http'
 " NeoBundle 'akiradeveloper/dummy-vim-plugin'
 
 " colorscheme
-NeoBundle 'altercation/vim-colors-solarized'
+" NeoBundle 'altercation/vim-colors-solarized'
 " NeoBundle 'akiradeveloper/desert.vim'
 " NeoBundle 'tomasr/molokai'
 
@@ -20,8 +20,8 @@ NeoBundle 'altercation/vim-colors-solarized'
 
 " NeoBundle 'vim-scripts/ManPageView'
 
-NeoBundle 'tsaleh/vim-matchit'
 NeoBundle 'vim-scripts/autodate.vim'
+NeoBundle 'vim-scripts/SudoEdit.vim'
 NeoBundle 'vim-scripts/L9'
 NeoBundle 'vim-scripts/L9'
 NeoBundle 'vim-scripts/textobj-user'
@@ -42,14 +42,15 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'kana/vim-smartchr'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent' 
 NeoBundle 'kana/vim-textobj-fold' 
 NeoBundle 'kana/vim-textobj-lastpat' 
+NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'tsaleh/vim-matchit'
 
 " bad behavior
 " NeoBundle 'nathanaelkane/vim-indent-guides'
@@ -60,7 +61,6 @@ NeoBundle 'tomtom/tcomment_vim'
 """ Haskell
 " heavy and maybe meaningless
 " NeoBundle 'lukerandall/haskellmode-vim'
-
 NeoBundle 'dag/vim2hs'
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'eagletmt/unite-haddock'
@@ -92,7 +92,7 @@ let g:unite_source_hoogle_max_candidates = 200
 " let g:unite_source_haddock_browser = 'firefox'
 " let g:w3m#command = 'w3m'
 
-" indent-guides
+""" indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_color_change_percent = 30
 let g:indent_guides_guide_size = 1
@@ -137,6 +137,7 @@ set noerrorbells
 set vb t_vb=
 
 set foldmethod=syntax
+set nofoldenable
 
 augroup grepopen
   autocmd!

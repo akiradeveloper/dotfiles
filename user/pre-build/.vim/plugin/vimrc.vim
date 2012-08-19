@@ -24,3 +24,7 @@ autocmd BufWritePost *.hs GhcModCheckAndLintAsync
 
 """ haskellmode-vim
 " au BufEnter *.hs compiler ghc
+"
+
+""" test
+" echom vimproc#get_command_name("ls")

@@ -1,6 +1,6 @@
 echo "read .zshrc"
 
-source .rc.generic
+source ~/.rc.generic
 
 # Set up the prompt
 autoload -Uz promptinit

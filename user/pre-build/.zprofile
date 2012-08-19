@@ -1,4 +1,4 @@
 echo "read .zprofile"
 
-source .profile.generic
-source .zshrc
+source ~/.profile.generic
+source ~/.zshrc
