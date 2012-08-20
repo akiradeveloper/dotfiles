@@ -5,7 +5,12 @@ if has('vim_starting')
   call neobundle#rc(expand('~/.vimbundle/'))
 endif
 
-let g:neobundle_default_git_protocol = 'http'
+" 'https' is chosen instead of 'http'
+" because 'git clone' with http protocol 
+" sometimes raises error.
+" result=22 http_code=413 is what I have seen before.
+" https is considered to be as often permitted as http.
+let g:neobundle_default_git_protocol = 'https'
 
 " NeoBundle 'akiradeveloper/dummy-vim-plugin'
 

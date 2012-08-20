@@ -42,7 +42,7 @@ task :initialize do
   vimbundlepath = File.join(ENV["HOME"], ".vimbundle")
   system "mkdir -p #{vimbundlepath}"
   Dir.chdir(vimbundlepath) do
-    system "git clone http://github.com/Shougo/neobundle.vim.git" 
+    system "git clone https://github.com/Shougo/neobundle.vim.git" 
   end
 end
 
