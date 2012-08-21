@@ -15,9 +15,11 @@ PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
 PATH=/usr/local/bin:$PATH
 EDITOR=vim
 PAGER=less
+LANG=C
 export PATH
 export EDITOR
 export PAGER
+export LANG
 
 if [ -d .profile.d ]; then
   for i in .profile.d/*.sh; do

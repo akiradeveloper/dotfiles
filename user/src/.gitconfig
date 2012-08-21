@@ -1,10 +1,12 @@
 [user]
-	email = ruby.wktk@gmail.com
 	name = Akira Hayakawa
+	email = ruby.wktk@gmail.com
 [github]
 	user = akiradeveloper
 [core]
 	editor = vim
+[color]
+	ui = auto
 
 <% if ENV['BEHIND_PROXY'] == '1' %>
 [http]
