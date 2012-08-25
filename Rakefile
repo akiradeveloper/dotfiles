@@ -33,7 +33,7 @@ namespace :root do
   task :reinstall => [:uninstall, :install]
 end
 
-desc("initialize(run this first!!!)")
+desc("###### RUN THIS FIRST ######")
 task :initialize do
   system "cp -n .dotfiles.conf ~"  
   system "cp -n .rc.local ~" 

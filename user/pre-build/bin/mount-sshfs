@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 source=$1
 mount_point=$2
@@ -9,4 +9,4 @@ then
 fi
 
 echo mounting a remote directory \(${source}\) on \(${mount_point}\)
-sshfs -o allow_root -o reconnect $mount_point $source
+sshfs -o sshfs_debug -o allow_root -o reconnect $source $mount_point 
