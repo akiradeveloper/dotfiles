@@ -1,0 +1,8 @@
+IP=hoge
+PORT=hige
+
+echo ID:
+read id
+echo PASSWD:
+read passwd
+
