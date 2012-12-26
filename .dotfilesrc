@@ -1,0 +1,15 @@
+[dotfiles]
+repository = ~/Dotfiles
+prefix = .
+ignore = [
+    'README.md',
+    'Rakefile',
+    'myproxy',
+    'bin',
+    '.git',
+    '.gitignore',
+    '.ghci',
+    '.gitconfig',
+    '.ssh',
+    '.dotfilesrc',
+    '*.swp']

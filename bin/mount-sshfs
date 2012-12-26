@@ -3,8 +3,7 @@
 source=$1
 mount_point=$2
 
-if [ ! -e ${mount_point} ]
-then
+if [ ! -e ${mount_point} ]; then
   mkdir -p ${mount_point}
 fi
 

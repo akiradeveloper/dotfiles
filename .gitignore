@@ -1,12 +1,9 @@
-*env.vim
-*files.list
 *tags
-.vim/bundle/*
-.vim/vundle
-.zsh/.zcompdump
-.xmonad
+vim/bundle/*
+vim/vundle
+zsh/.zcompdump
+xmonad
 *.o
 *.swp
 tmp
-user/build/*
-root/build/*
+ssh

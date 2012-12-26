@@ -1,8 +1,12 @@
-IP=hoge
-PORT=hige
+PROXY_IP=
+PROXY_PORT=
+PROXY_ID=
 
-echo ID:
-read id
 echo PASSWD:
-read passwd
+read PROXY_PASSWD
 
+export http_proxy=http://$PROXY_ID:$PROXY_PASSWD@$PROXY_IP:$PROXY_PORT
+export HTTP_PROXY=$http_proxy
+
+export https_proxy=https://$PROXY_ID:$PROXY_PASSWD@$PROXY_IP:$PROXY_PORT
+export HTTPS_PROXY=$https_proxy
