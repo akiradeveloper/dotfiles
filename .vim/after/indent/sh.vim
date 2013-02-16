@@ -1,1 +1,4 @@
-call g:set_local_indent_level(2)
+setlocal expandtab
+setlocal shiftwidth=4
+setlocal tabstop=4
+setlocal softtabstop=4

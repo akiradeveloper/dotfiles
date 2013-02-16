@@ -44,3 +44,4 @@ export PAGER=less
 export LANG=C
 
 eval "$(rbenv init)"
+[[ -s $HOME/.pythonbrew/etc/bashrc ]] & source $HOME/.pythonbrew/etc/bashrc

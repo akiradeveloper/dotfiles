@@ -132,6 +132,7 @@ set showmatch
 set incsearch
 set nobackup
 set nowritebackup
+set noswapfile
 "set backupdir=$HOME/backup
 "set directory=
 "set encoding=utf-8
@@ -154,11 +155,3 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 set clipboard+=unnamed
 
 filetype plugin indent on
-
-" Utilities
-function! g:set_local_indent_level(level)
-  execute "setlocal expandtab"
-  execute "setlocal shiftwidth=" . a:level
-  execute "setlocal tabstop=" . a:level
-  execute "setlocal softtabstop=" . a:level
-endfunction
