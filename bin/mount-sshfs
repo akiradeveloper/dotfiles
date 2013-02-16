@@ -1,0 +1,11 @@
+#!/bin/sh
+
+source=$1
+mount_point=$2
+
+if [ ! -e ${mount_point} ]; then
+  mkdir -p ${mount_point}
+fi
+
+echo mounting a remote directory \(${source}\) on \(${mount_point}\)
+sshfs -o sshfs_debug -o allow_root -o reconnect $source $mount_point 

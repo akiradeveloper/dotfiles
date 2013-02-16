@@ -1,0 +1,18 @@
+[user]
+	name = Akira Hayakawa
+	email = ruby.wktk@gmail.com
+[github]
+	user = akiradeveloper
+[core]
+	editor = vim
+[color]
+	ui = auto
+[alias]
+	tr = log --graph --pretty=oneline --abbrev-commit
+	b = branch
+	co = checkout
+	d = diff
+	st = stash
+[http]
+	#proxy = http://<%=ENV['PROXY_ID']%>:<%=ENV['PROXY_PASSWD']%>@<%=ENV['PROXY_IP']%>:<%=ENV['PROXY_PORT']%>/
+	#proxy = http://<%=ENV['PROXY_IP']%>:<%=ENV['PROXY_PORT']%>/
