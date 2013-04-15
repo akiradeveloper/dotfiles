@@ -52,10 +52,10 @@ NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent' 
 NeoBundle 'kana/vim-textobj-fold' 
 NeoBundle 'kana/vim-textobj-lastpat' 
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tsaleh/vim-matchit'
+" NeoBundle 'scrooloose/syntastic'
 
 " bad behavior
 " NeoBundle 'nathanaelkane/vim-indent-guides'
@@ -63,11 +63,14 @@ NeoBundle 'tsaleh/vim-matchit'
 " basic w3m suffices.
 " NeoBundle 'yuratomo/w3m.vim'
 
+""" Scala
+NeoBundle 'derekwyatt/vim-scala'
+
 """ Haskell
 " heavy and maybe meaningless
 " NeoBundle 'lukerandall/haskellmode-vim'
 NeoBundle 'dag/vim2hs'
-NeoBundle 'eagletmt/ghcmod-vim'
+NeoBundle 'eagletmt/ghcmod-vim' " cabal install ghc-mod is required.
 NeoBundle 'eagletmt/unite-haddock'
 NeoBundle 'ujihisa/neco-ghc'
 NeoBundle 'ujihisa/unite-haskellimport'
@@ -84,7 +87,9 @@ let g:neocomplcache_enable_at_startup = 1
 let g:vimfiler_as_default_explorer = 1
 nnoremap <Space>f :call <SID>toggle_vimfiler()<Cr>
 function! s:toggle_vimfiler()
+  echomsg("launches vimfiler")
   VimFiler -simple -buffer-name=explorer -split -winwidth=35 -toggle -no-quit<Cr>
+  " VimFilerExplorer<Cr> 
 endfunction 
 autocmd VimEnter * call <SID>toggle_vimfiler()
 autocmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') | q | endif

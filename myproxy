@@ -10,3 +10,5 @@ export HTTP_PROXY=$http_proxy
 
 export https_proxy=https://$PROXY_ID:$PROXY_PASSWD@$PROXY_IP:$PROXY_PORT
 export HTTPS_PROXY=$https_proxy
+
+export ftp_proxy=http://$PROXY_ID:$PROXY_PASSWD@$PROXY_IP:$PROXY_PORT

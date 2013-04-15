@@ -33,10 +33,16 @@ add_binpath_foreach $HOME
 add_binpath_foreach $HOME/local
 add_binpath_of $HOME
 
+PATH=$HOME/bin:$PATH
 PATH=$HOME/Dotfiles/bin:$PATH
 PATH=$HOME/.rbenv/shims:$PATH
 PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
 PATH=/usr/local/bin:$PATH
+PATH=/usr/local/vim/bin:$PATH
+PATH=/usr/local/ghc/bin:$PATH
+PATH=/usr/local/node/bin:$PATH
+PATH=$HOME/src/scala-2.10.1/bin:$PATH
+PATH=$HOME/.cabal/bin:$PATH
 export PATH
 
 export EDITOR=vim
