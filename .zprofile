@@ -37,7 +37,15 @@ PATH=$HOME/Dotfiles/bin:$PATH
 PATH=$HOME/.rbenv/shims:$PATH
 PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH
 PATH=/usr/local/bin:$PATH
+PATH=/usr/local/vim/bin:$PATH
+PATH=/usr/local/ghc/bin:$PATH
+PATH=$HOME/.cabal/bin:$PATH
+#PATH=/usr/local/node/bin:$PATH
+#PATH=$HOME/src/scala-2.10.1/bin:$PATH
 export PATH
+
+#LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH
 
 export EDITOR=vim
 export PAGER=less
@@ -45,3 +53,5 @@ export LANG=C
 
 eval "$(rbenv init)"
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] & source $HOME/.pythonbrew/etc/bashrc
+
+#sshfs -o sshfs_debug -o allow_root -o reconnect Kamille:/home/akira Kamille
