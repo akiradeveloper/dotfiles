@@ -16,12 +16,12 @@ let g:haskell_jmacro = 0
 " let g:haskell_tabular = 0
 
 """ necoghc
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+" autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 """ syntastic
-call add(g:syntastic_mode_map['passive_filetypes'], 'haskell')
-autocmd BufWritePost *.hs GhcModCheckAndLintAsync
-call add(g:syntastic_mode_map['passive_filetypes'], 'c')
+" call add(g:syntastic_mode_map['passive_filetypes'], 'haskell')
+" autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+" call add(g:syntastic_mode_map['passive_filetypes'], 'c')
 
 """ haskellmode-vim
 " au BufEnter *.hs compiler ghc
