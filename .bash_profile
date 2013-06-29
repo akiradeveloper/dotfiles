@@ -48,7 +48,7 @@ export PATH
 #LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH
 
-export EDITOR=vim
+export EDITOR=vi
 export PAGER=less
 export LANG=C
 

@@ -88,7 +88,7 @@ let g:vimfiler_as_default_explorer = 1
 nnoremap <Space>f :call <SID>toggle_vimfiler()<Cr>
 function! s:toggle_vimfiler()
   echomsg("launches vimfiler")
-  VimFiler -simple -buffer-name=explorer -split -winwidth=35 -toggle -no-quit<Cr>
+  VimFiler -simple -buffer-name=explorer -split -winwidth=35 -toggle -no-quit
   " VimFilerExplorer<Cr> 
 endfunction 
 autocmd VimEnter * call <SID>toggle_vimfiler()
