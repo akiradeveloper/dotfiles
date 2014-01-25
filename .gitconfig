@@ -7,12 +7,18 @@
 	editor = vim
 [color]
 	ui = auto
+	#autocrlf = input
+	#safecrlf = true
 [alias]
-	tr = log --graph --pretty=oneline --abbrev-commit
+	al = alias
 	b = branch
 	co = checkout
-	d = diff
-	st = stash
+	ci = commit -v -s
+	di = diff
+	dc = diff --cached
+	st = status -uno -s
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	pru = remote prune
 [http]
 	#proxy = http://<%=ENV['PROXY_ID']%>:<%=ENV['PROXY_PASSWD']%>@<%=ENV['PROXY_IP']%>:<%=ENV['PROXY_PORT']%>/
 	#proxy = http://<%=ENV['PROXY_IP']%>:<%=ENV['PROXY_PORT']%>/
