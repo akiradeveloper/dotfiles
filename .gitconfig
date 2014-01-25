@@ -17,6 +17,7 @@
 	di = diff
 	dc = diff --cached
 	st = status -uno -s
+	ru = remote update
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	pru = remote prune
 [http]

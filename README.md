@@ -9,9 +9,7 @@ Installation is also simplest.
 cd ~
 git clone https://github.com/jbernard/dotfiles 
 git clone https://github.com/akiradeveloper/dotfiles Dotfiles
-cd ~/dotfiles
-./bin/dotfiles -C ~/Dotfiles/.dotfilesrc --sync
-cd ~/Dotfiles
+make resync
 rake init
 ```
 

@@ -1,3 +1,5 @@
+#!/bin/sh
+
 export PROXY_IP=
 export PROXY_PORT=
 export PROXY_ID=

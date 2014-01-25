@@ -4,6 +4,7 @@ prefix = .
 ignore = [
     'README.md',
     'Rakefile',
+    'Makefile',
     'myproxy',
     'bin',
     '.git',
