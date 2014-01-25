@@ -1,0 +1,6 @@
+[submodule "legit"]
+	path = legit
+	url = https://github.com/kennethreitz/legit
+[submodule "gitflow"]
+	path = gitflow
+	url = https://github.com/nvie/gitflow

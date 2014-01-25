@@ -18,21 +18,15 @@ endif
 let g:neobundle_default_git_protocol = 'https'
 NeoBundle 'Shougo/neobundle.vim'
 
+" Use :NeoBundleLazy if you want to load a plugin with specified filetype
 
-""""""""""
-" Autodate
-""""""""""
-" usage:
-" :Autodate
-" :Autodate(ON|OFF)
-NeoBundle 'vim-scripts/autodate.vim'
-let plugin_autodate_disable = 1
+
 
 
 " NeoBundle 'vim-scripts/ManPageView'
 NeoBundle 'vim-scripts/SudoEdit.vim'
 NeoBundle 'vim-scripts/L9'
-NeoBundle 'vim-scripts/textobj-user'
+" NeoBundle 'vim-scripts/textobj-user'
 NeoBundle 'vim-jp/vital.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/vimshell'
@@ -41,11 +35,10 @@ NeoBundle 'Shougo/unite-ssh'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun' " \ + r to run the script
 NeoBundle 'thinca/vim-localrc'
-NeoBundle 'thinca/vim-visualstar'
-NeoBundle 'thinca/vim-ref'
+NeoBundle 'thinca/vim-visualstar' " moving to the next keyword you are on now
+" NeoBundle 'thinca/vim-ref' " read reference in vim
 " NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-markdown'
-" NeoBundle 'kana/vim-smartchr'
+" NeoBundle 'kana/vim-smartchr' " puts different string according to # key down
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent' 
 NeoBundle 'kana/vim-textobj-fold' 
@@ -57,6 +50,12 @@ NeoBundle 'tomtom/tcomment_vim' " Toggles comments
 NeoBundle 'tsaleh/vim-matchit' " moving from { to } by a typing %
 " NeoBundle 'scrooloose/syntastic' " syntax check
 " NeoBundle 'yuratomo/w3m.vim' " enough with w3m or lynx
+
+
+""""""""""""""
+" For Markdown
+""""""""""""""
+NeoBundle 'tpope/vim-markdown'
 
 
 """""""""""""
@@ -108,12 +107,25 @@ autocmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') | q | endif
 " FIXME
 " with Easy Motion on the CPU usage goes too high
 " what is the problem?
-NeoBundle 'Lokaltog/vim-easymotion' " Jumping around the code by key
-let g:EasyMotion_leader_key = ";"
-let g:EasyMotion_keys = "j"
-let g:EasyMotion_grouping = 1
-hi EasyMotionTarget ctermbg=none ctermfg=red
-hi EasyMotionTarget ctermbg=none ctermfg=blue
+" sneaking around the code with string searching is enough fast
+" we don't need this. then turned off.
+
+" NeoBundle 'Lokaltog/vim-easymotion' " Jumping around the code by key
+" let g:EasyMotion_leader_key = ";"
+" let g:EasyMotion_keys = "j"
+" " let g:EasyMotion_grouping = 1
+" hi EasyMotionTarget ctermbg=none ctermfg=red
+" hi EasyMotionTarget ctermbg=none ctermfg=blue
+
+
+""""""""""
+" Autodate
+""""""""""
+" usage:
+" :Autodate
+" :Autodate(ON|OFF)
+NeoBundle 'vim-scripts/autodate.vim'
+let plugin_autodate_disable = 1
 
 
 """""""""""""""

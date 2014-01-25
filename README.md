@@ -3,14 +3,14 @@ My dotfiles powered by dotfiles(python)
 which is simplest that focues only on essential dotfiles.
 
 ## Installation
-Installation is also simplest.
 
 ```
 cd ~
-git clone https://github.com/jbernard/dotfiles 
-git clone https://github.com/akiradeveloper/dotfiles Dotfiles
+git clone https://github.com/jbernard/jb-dotfiles 
+git clone https://github.com/akiradeveloper/dotfiles
+make init
+sudo make install
 make resync
-rake init
 ```
 
 ## Author Info

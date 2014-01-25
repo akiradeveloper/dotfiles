@@ -1,5 +1,5 @@
 [dotfiles]
-repository = ~/Dotfiles
+repository = ~/dotfiles
 prefix = .
 ignore = [
     'README.md',
@@ -8,6 +8,7 @@ ignore = [
     'myproxy',
     'bin',
     '.git',
+    '.gitmodules',
     '.gitignore',
     '.ghci',
     '.ssh',
