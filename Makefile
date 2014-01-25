@@ -6,6 +6,7 @@ init:
 install:
 	cd gitflow; make install
 	cd legit; python setup.py install
+	cd git-extras; make install
 	
 resync:
 	$(HOME)/jb-dotfiles/bin/dotfiles -C $(HOME)/dotfiles/.dotfilesrc --force --sync
