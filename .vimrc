@@ -50,6 +50,7 @@ NeoBundle 'tomtom/tcomment_vim' " Toggles comments
 NeoBundle 'tsaleh/vim-matchit' " moving from { to } by a typing %
 " NeoBundle 'scrooloose/syntastic' " syntax check
 " NeoBundle 'yuratomo/w3m.vim' " enough with w3m or lynx
+NeoBundle "cohama/the-ocamlspot.vim"
 
 
 """"""""""""""
