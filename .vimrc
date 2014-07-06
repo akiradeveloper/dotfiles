@@ -47,7 +47,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 
 NeoBundle 'tomtom/tcomment_vim' " Toggles comments
-NeoBundle 'tsaleh/vim-matchit' " moving from { to } by a typing %
+NeoBundle 'vim-scripts/matchit.zip' " moving from { to } by a typing %
 " NeoBundle 'scrooloose/syntastic' " syntax check
 " NeoBundle 'yuratomo/w3m.vim' " enough with w3m or lynx
 NeoBundle "cohama/the-ocamlspot.vim"
@@ -81,6 +81,12 @@ NeoBundle 'vim-ruby/vim-ruby'
 " For Scala
 """""""""""
 NeoBundle 'derekwyatt/vim-scala'
+
+
+"""""""""""
+" For OCaml
+"""""""""""
+NeoBundle 'vim-scripts/omlet.vim'
 
 
 """""""""""""""
