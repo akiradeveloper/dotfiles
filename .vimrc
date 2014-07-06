@@ -85,7 +85,10 @@ NeoBundle 'derekwyatt/vim-scala'
 """""""""""
 " For OCaml
 """""""""""
-NeoBundle 'vim-scripts/omlet.vim'
+" [error] omlet not found
+" NeoBundle 'vim-scripts/omlet.vim'
+
+" [error] ocamlspot not found
 " NeoBundle "cohama/the-ocamlspot.vim"
 
 """""""""""""""
