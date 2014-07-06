@@ -13,6 +13,16 @@ sudo make install
 make resync
 ```
 
+
+## Softwares to Install
+
+* OPAM
+* git
+* git-flow
+* git-extras
+
+TODO: automates install/update
+
 ## Author Info
 Akira Hayakawa (@akiradeveloper)  
 ruby.wktk@gmail.com
