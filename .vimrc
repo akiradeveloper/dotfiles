@@ -75,6 +75,8 @@ NeoBundle 'pbrisbin/html-template-syntax'
 """"""""""
 NeoBundle 'vim-ruby/vim-ruby'
 
+NeoBundle 'fatih/vim-go'
+
 
 """""""""""
 " For Scala
