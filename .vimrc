@@ -50,7 +50,8 @@ NeoBundle 'tomtom/tcomment_vim' " Toggles comments
 NeoBundle 'vim-scripts/matchit.zip' " moving from { to } by a typing %
 " NeoBundle 'scrooloose/syntastic' " syntax check
 " NeoBundle 'yuratomo/w3m.vim' " enough with w3m or lynx
-
+"
+NeoBundle 'majutsushi/tagbar'
 
 """"""""""""""
 " For Markdown
