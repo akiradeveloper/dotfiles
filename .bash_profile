@@ -1,7 +1,8 @@
 #!/bin/sh
 
+. $HOME/erlang/17_1/activate
 
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/sbin:/sbin:$HOME/local/bin:$HOME/Dotfiles/bin:$HOME/local/scala/bin:$HOME/.cabal/bin:$HOME/.rbenv/shims:$PATH
+export PATH=$HOME/elixir/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/sbin:$HOME/local/bin:$HOME/Dotfiles/bin:$HOME/local/scala/bin:$HOME/.cabal/bin:$HOME/.rbenv/shims:$PATH
 
 export GOPATH=$HOME/_go
 export GOROOT=$HOME/go

@@ -94,6 +94,8 @@ NeoBundle 'derekwyatt/vim-scala'
 " [error] ocamlspot not found
 " NeoBundle "cohama/the-ocamlspot.vim"
 
+NeoBundle "elixir-lang/vim-elixir"
+
 """""""""""""""
 " Neocomplcache
 """""""""""""""
