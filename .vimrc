@@ -6,9 +6,16 @@
 set nocompatible
 filetype plugin indent off
 if has('vim_starting')
+  if &compatible
+    set noncompatible
+  endif
   set runtimepath+=~/.vimbundle/neobundle.vim/
-  call neobundle#rc(expand('~/.vimbundle/'))
 endif
+
+call neobundle#begin(expand('~/.vimbundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+call neobundle#end()
+
 
 " 'https' is chosen instead of 'http'
 " because 'git clone' with http protocol 
@@ -225,3 +232,4 @@ augroup END
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 filetype plugin indent on
+NeoBundleCheck
