@@ -103,6 +103,22 @@ NeoBundle 'derekwyatt/vim-scala'
 
 NeoBundle "elixir-lang/vim-elixir"
 
+"""""""""
+" For Nim
+"""""""""
+NeoBundle 'zah/nimrod.vim'
+
+fun! JumpToDef()
+  if exists("*GotoDefinition_" . &filetype)
+    call GotoDefinition_{&filetype}()
+  else
+    exe "norm! \<C-]>"
+  endif
+endf
+
+nn <M-g> :call JumpToDef()<cr>
+ino <M-g> <esc>:call JumpToDef()<cr>i
+
 """""""""""""""
 " Neocomplcache
 """""""""""""""

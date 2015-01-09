@@ -8,6 +8,10 @@ export GOPATH=$HOME/_go
 export GOROOT=$HOME/go
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
+
+export NIMPATH=$HOME/Nim
+export PATH=$NIMPATH/bin:$PATH
+
 eval "$(rbenv init)"
 
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] & source $HOME/.pythonbrew/etc/bashrc
