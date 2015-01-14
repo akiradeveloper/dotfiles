@@ -10,7 +10,7 @@ export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 
 export NIMPATH=$HOME/Nim
-export PATH=$NIMPATH/bin:$PATH
+export PATH=$HOME/.nimble/bin:$NIMPATH/bin:$PATH
 
 eval "$(rbenv init)"
 
