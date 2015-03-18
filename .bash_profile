@@ -10,7 +10,9 @@ export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 
 export NIMPATH=$HOME/Nim
-export PATH=$HOME/.nimble/bin:$NIMPATH/bin:$PATH
+export PATH=$HOME/.nimvm/bin:$HOME/.nimble/bin:$NIMPATH/bin:$PATH
+
+[[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
 
 eval "$(rbenv init)"
 

@@ -71,7 +71,7 @@ NeoBundle 'tpope/vim-markdown'
 """""""""""""
 " NeoBundle 'lukerandall/haskellmode-vim' " Too heavy and out
 NeoBundle 'dag/vim2hs'
-NeoBundle 'eagletmt/ghcmod-vim' " cabal install ghc-mod is required.
+" NeoBundle 'eagletmt/ghcmod-vim' " cabal install ghc-mod is required.
 NeoBundle 'eagletmt/unite-haddock'
 NeoBundle 'ujihisa/neco-ghc'
 NeoBundle 'ujihisa/unite-haskellimport'
@@ -101,12 +101,12 @@ NeoBundle 'derekwyatt/vim-scala'
 " [error] ocamlspot not found
 " NeoBundle "cohama/the-ocamlspot.vim"
 
-NeoBundle "elixir-lang/vim-elixir"
-
 """""""""
 " For Nim
 """""""""
 NeoBundle 'zah/nimrod.vim'
+
+NeoBundle "elixir-lang/vim-elixir"
 
 fun! JumpToDef()
   if exists("*GotoDefinition_" . &filetype)
@@ -118,6 +118,11 @@ endf
 
 nn <M-g> :call JumpToDef()<cr>
 ino <M-g> <esc>:call JumpToDef()<cr>i
+
+
+NeoBundle 'rust-lang/rust.vim'
+
+NeoBundle 'elixir-lang/vim-elixir'
 
 """""""""""""""
 " Neocomplcache
