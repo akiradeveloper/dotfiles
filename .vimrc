@@ -1,8 +1,6 @@
 " Last Change: 25-Jan-2014.
 
-"""""""""""
 " NeoBundle
-"""""""""""
 set nocompatible
 filetype plugin indent off
 if has('vim_starting')
@@ -13,22 +11,19 @@ if has('vim_starting')
 endif
 
 call neobundle#begin(expand('~/.vimbundle/'))
+
 NeoBundleFetch 'Shougo/neobundle.vim'
-call neobundle#end()
 
-
-" 'https' is chosen instead of 'http'
-" because 'git clone' with http protocol 
-" sometimes raises error.
-" result=22 http_code=413 is what I have seen before.
-" https is considered to be as often permitted as http.
+" 'https' is chosen instead of 'http' because 'git clone' with http protocol sometimes raises error (result=22 http_code=413)
 let g:neobundle_default_git_protocol = 'https'
 NeoBundle 'Shougo/neobundle.vim'
 
 " Use :NeoBundleLazy if you want to load a plugin with specified filetype
 
+NeoBundle 'Shougo/neocomplcache'
+let g:neocomplcache_enable_at_startup = 1
 
-
+NeoBundle 'Shougo/vimfiler'
 
 " NeoBundle 'vim-scripts/ManPageView'
 NeoBundle 'vim-scripts/SudoEdit.vim'
@@ -60,15 +55,10 @@ NeoBundle 'vim-scripts/matchit.zip' " moving from { to } by a typing %
 "
 NeoBundle 'majutsushi/tagbar'
 
-""""""""""""""
-" For Markdown
-""""""""""""""
+" Markdown
 NeoBundle 'tpope/vim-markdown'
 
-
-"""""""""""""
-" For Haskell
-"""""""""""""
+" Haskell
 " NeoBundle 'lukerandall/haskellmode-vim' " Too heavy and out
 NeoBundle 'dag/vim2hs'
 " NeoBundle 'eagletmt/ghcmod-vim' " cabal install ghc-mod is required.
@@ -77,36 +67,73 @@ NeoBundle 'ujihisa/neco-ghc'
 NeoBundle 'ujihisa/unite-haskellimport'
 NeoBundle 'pbrisbin/html-template-syntax'
 
-
-""""""""""
-" For Ruby
-""""""""""
+" Ruby
 NeoBundle 'vim-ruby/vim-ruby'
 
+" Go
 NeoBundle 'fatih/vim-go'
 
-
-"""""""""""
-" For Scala
-"""""""""""
+" Scala
 NeoBundle 'derekwyatt/vim-scala'
 
-
-"""""""""""
-" For OCaml
-"""""""""""
+" OCaml
 " [error] omlet not found
 " NeoBundle 'vim-scripts/omlet.vim'
 
 " [error] ocamlspot not found
 " NeoBundle "cohama/the-ocamlspot.vim"
 
-"""""""""
-" For Nim
-"""""""""
+" Nim
 NeoBundle 'zah/nimrod.vim'
 
+" Elixir
 NeoBundle "elixir-lang/vim-elixir"
+
+" Rust
+NeoBundle 'rust-lang/rust.vim'
+
+" Autodate
+" usage:
+" :Autodate
+" :Autodate(ON|OFF)
+NeoBundle 'vim-scripts/autodate.vim'
+let plugin_autodate_disable = 1
+
+" NeoBundle 'matchit'
+
+" Easy Motion
+" NeoBundle 'Lokaltog/vim-easymotion' " Jumping around the code by key
+" let g:EasyMotion_leader_key = ";"
+" let g:EasyMotion_keys = "j"
+" " let g:EasyMotion_grouping = 1
+" hi EasyMotionTarget ctermbg=none ctermfg=red
+" hi EasyMotionTarget ctermbg=none ctermfg=blue
+
+" Visually displays indent levels
+" NeoBundle 'nathanaelkane/vim-indent-guides' " behaves badly
+" let g:indent_guides_enable_on_vim_startup = 1
+" let g:indent_guides_color_change_percent = 30
+" let g:indent_guides_guide_size = 1
+
+" NeoBundle 'altercation/vim-colors-solarized'
+" NeoBundle 'tomasr/molokai'
+" NeoBundle 'akiradeveloper/desert.vim'
+" NeoBundle 'marks_corey' 
+" pair with neobundle#begin()
+call neobundle#end()
+
+" Color Scheme
+" set background=dark
+" set background=light
+" let g:solarized_termcolors = 256
+" let g:solarized_contrast = 'high'
+" let g:solarized_visibility = 'high'
+" let g:solarized_bold = 1
+" let g:solarized_termtrans = 1
+" let g:molokai_original = 1
+" colorscheme solarized
+" colorscheme molokai
+" colorscheme desert
 
 fun! JumpToDef()
   if exists("*GotoDefinition_" . &filetype)
@@ -115,22 +142,9 @@ fun! JumpToDef()
     exe "norm! \<C-]>"
   endif
 endf
-
 nn <M-g> :call JumpToDef()<cr>
 ino <M-g> <esc>:call JumpToDef()<cr>i
 
-
-NeoBundle 'rust-lang/rust.vim'
-
-NeoBundle 'elixir-lang/vim-elixir'
-
-"""""""""""""""
-" Neocomplcache
-"""""""""""""""
-NeoBundle 'Shougo/neocomplcache'
-let g:neocomplcache_enable_at_startup = 1
-
-NeoBundle 'Shougo/vimfiler'
 " open VimFiler instead of netrw which launches by typing :e . .
 let g:vimfiler_as_default_explorer = 1
 nnoremap <Space>f :call <SID>toggle_vimfiler()<Cr>
@@ -142,37 +156,7 @@ endfunction
 autocmd VimEnter * call <SID>toggle_vimfiler()
 autocmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') | q | endif
 
-
-"""""""""""""
-" Easy Motion
-"""""""""""""
-" FIXME
-" with Easy Motion on the CPU usage goes too high
-" what is the problem?
-" sneaking around the code with string searching is enough fast
-" we don't need this. then turned off.
-
-" NeoBundle 'Lokaltog/vim-easymotion' " Jumping around the code by key
-" let g:EasyMotion_leader_key = ";"
-" let g:EasyMotion_keys = "j"
-" " let g:EasyMotion_grouping = 1
-" hi EasyMotionTarget ctermbg=none ctermfg=red
-" hi EasyMotionTarget ctermbg=none ctermfg=blue
-
-
-""""""""""
-" Autodate
-""""""""""
-" usage:
-" :Autodate
-" :Autodate(ON|OFF)
-NeoBundle 'vim-scripts/autodate.vim'
-let plugin_autodate_disable = 1
-
-
-"""""""""""""""
 " unite-haddock
-"""""""""""""""
 let g:unite_source_hoogle_max_candidates = 200
 " w3m doesn't work.
 " let g:unite_source_haddock_browser = 'w3m'
@@ -180,40 +164,8 @@ let g:unite_source_hoogle_max_candidates = 200
 " let g:unite_source_haddock_browser = 'firefox'
 " let g:w3m#command = 'w3m'
 
-
-" visually displays indent levels
-" NeoBundle 'nathanaelkane/vim-indent-guides' " behaves badly
-" let g:indent_guides_enable_on_vim_startup = 1
-" let g:indent_guides_color_change_percent = 30
-" let g:indent_guides_guide_size = 1
-
 syntax enable
 syntax on
-
-""""""""""""""
-" Color Scheme
-""""""""""""""
-
-" NeoBundle 'altercation/vim-colors-solarized'
-" NeoBundle 'marks_corey' 
-" NeoBundle 'matchit'
-
-" set background=dark
-" let g:solarized_termcolors = 256
-" let g:solarized_contrast = 'high'
-" let g:solarized_visibility = 'high'
-" let g:solarized_bold = 1
-" let g:solarized_termtrans = 1
-" colorscheme solarized
-
-" colorscheme molokai
-" NeoBundle 'tomasr/molokai'
-" let g:molokai_original = 1
-
-" set background=light
-" NeoBundle 'akiradeveloper/desert.vim'
-" colorscheme desert
-
 
 " change the indent of multiple lines
 " designated by visual mode
