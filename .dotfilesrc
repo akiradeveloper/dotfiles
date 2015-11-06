@@ -10,6 +10,8 @@ ignore = [
     '.git',
     '.gitmodules',
     '.gitignore',
+    '.bashrc',
+    '.bash_profile',
     '.ghci',
     '.ssh',
     '.dotfilesrc',
