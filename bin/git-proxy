@@ -1,4 +1,0 @@
-#!/bin/sh
-CORKSCREW=`which corkscrew`
-#$CORKSCREW $PROXY_IP $PROXY_PORT $1 $2 $HOME/.ssh/.autorize
-#$CORKSCREW $PROXY_IP $PROXY_PORT $1 $2 
