@@ -5,7 +5,7 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 # aliases
-alias ls='ls --color=auto'
+alias ls='ls -G'
 alias cl='clear'
 
 export EDITOR=vi
